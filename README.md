@@ -52,17 +52,17 @@ export JAVA_OPTS &&
 ```
 $ siege -v -c5 -t2m http://...:8081/users/1
 Lifting the server siege...
-Transactions:		        2070 hits
+Transactions:		        1398 hits
 Availability:		      100.00 %
-Elapsed time:		      119.64 secs
+Elapsed time:		      119.71 secs
 Data transferred:	        0.00 MB
-Response time:		        0.03 secs
-Transaction rate:	       17.30 trans/sec
+Response time:		        0.17 secs
+Transaction rate:	       11.68 trans/sec
 Throughput:		        0.00 MB/sec
-Concurrency:		        0.57
-Successful transactions:        2070
+Concurrency:		        2.03
+Successful transactions:        1398
 Failed transactions:	           0
-Longest transaction:	        1.04
+Longest transaction:	       30.61
 Shortest transaction:	        0.00
 ```
 
