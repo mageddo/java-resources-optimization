@@ -63,3 +63,6 @@ JVM
 
 * ![](https://i.imgur.com/7jaWKGX.png)
 * ![](https://i.imgur.com/8ugIKnb.png)
+
+### Spring Job - Schedule + Rabbit
+In 30 seconds it sent 5000msgs to rabbit and consumed it with a 0-10 consumers range
