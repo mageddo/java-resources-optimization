@@ -1,14 +1,13 @@
 version: '2.2'
 services:
-  spring-web-reactive:
+  java-resources-optimization:
     image: java:openjdk-8u91
-    hostname: "openjdk8.dev"
-    container_name: spring-web-reactive
+    hostname: "java-resources-optimization.dev"
+    container_name: java-resources-optimization
     volumes:
-      - ./build:/opt/spring
-    working_dir: /opt/spring
+      - ./:/app/
+    working_dir: /app/
     command: tail -f /dev/null
-#    command: java -Xmx50m -Xss256k -jar hello-world-1.0-SNAPSHOT.jar
     mem_limit: 120m
     cpus: 0.5
     memswap_limit: 0
