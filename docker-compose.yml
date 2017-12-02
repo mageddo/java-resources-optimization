@@ -8,7 +8,9 @@ services:
       - ./:/app/
     working_dir: /app/
     command: tail -f /dev/null
-    mem_limit: 150m
     cpus: 0.5
+    mem_limit: 150m
     memswap_limit: 0
+    env_file:
+      - .env
     network_mode: bridge
