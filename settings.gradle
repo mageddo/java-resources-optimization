@@ -2,4 +2,6 @@ rootProject.name = 'java-resources-optimization'
 
 include 'spring-netty-webflux'
 include 'spring-mvc-undertow'
+include 'spring-job'
+include 'grpc'
 include 'user'

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class UserController {
 
@@ -23,5 +25,10 @@ public class UserController {
 	@GetMapping(value = "/users/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public @ResponseBody ResponseEntity<UserEntity> geatUser(@PathVariable("id") int userId){
 		return ResponseEntity.ok(userRepository.getById(userId));
+	}
+
+	@GetMapping(value = "/users/", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public @ResponseBody ResponseEntity<List<UserEntity>> geatUsers(){
+		return ResponseEntity.ok(userRepository.findAll());
 	}
 }

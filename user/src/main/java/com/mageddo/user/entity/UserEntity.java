@@ -4,9 +4,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 @Entity(name = "USER")
-public class UserEntity {
+public class UserEntity implements Serializable {
 
 	@Id
 	@GeneratedValue

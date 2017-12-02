@@ -9,7 +9,7 @@ services:
     working_dir: /app/
     command: tail -f /dev/null
     cpus: 0.5
-    mem_limit: 150m
+    mem_limit: 100m
     memswap_limit: 0
     env_file:
       - .env
