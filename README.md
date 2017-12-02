@@ -45,7 +45,7 @@ JAVA_OPTS="$JAVA_OPTS -Dcom.sun.management.jmxremote.password.file=src/main/reso
 JAVA_OPTS="$JAVA_OPTS -Dcom.sun.management.jmxremote.access.file=src/main/resources/access.properties" &&\
 JAVA_OPTS="$JAVA_OPTS -Dcom.sun.management.jmxremote.ssl=false" && \
 export JAVA_OPTS &&
-./spring/netty-webflux/build/install/spring/netty-webflux/bin/spring/netty-webflux
+./spring-netty-webflux/build/install/spring-netty-webflux/bin/spring-netty-webflux
 ```
 
 #### Stress Test
