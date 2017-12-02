@@ -1,0 +1,61 @@
+MOTHERBOARD
+  Model: P8H61-M LE/BR
+  vendor: ASUSTeK COMPUTER INC.
+
+CPU 
+  description: CPU
+  product: Intel(R) Core(TM) i3-2120 CPU @ 3.30GHz
+  size: 2608MHz
+  capacity: 3800MHz
+  width: 64 bits
+  clock: 100MHz
+  configuration: cores=2 enabledcores=1 threads=2
+  *-cache:0
+       description: L1 cache
+       physical id: 5
+       slot: L1-Cache
+       size: 128KiB
+       capacity: 128KiB
+       capabilities: internal write-back unified
+       configuration: level=1
+  *-cache:1
+       description: L2 cache
+       physical id: 6
+       slot: L2-Cache
+       size: 512KiB
+       capacity: 512KiB
+       capabilities: internal varies unified
+       configuration: level=2
+  *-cache:2 DISABLED
+       description: L3 cache
+       physical id: 7
+       slot: L3-Cache
+       size: 3MiB
+       capacity: 3MiB
+       capabilities: internal unified
+       configuration: level=3
+MEMORY
+    description: System Memory
+    physical id: 53
+    slot: System board or motherboard
+    size: 12GiB
+  *-bank:0
+       description: DIMM DDR3 Synchronous 1333 MHz (0.8 ns)
+       product: 99U5471-028.A00LF
+       vendor: Kingston
+       physical id: 0
+       serial: 161ABC8A
+       slot: ChannelA-DIMM0
+       size: 4GiB
+       width: 64 bits
+       clock: 1333MHz (0.8ns)
+  *-bank:1
+       description: DIMM DDR3 Synchronous 1333 MHz (0.8 ns)
+       product: 99U5471-057.A00LF
+       vendor: Kingston
+       physical id: 1
+       serial: 6C2270BA
+       slot: ChannelB-DIMM0
+       size: 8GiB
+       width: 64 bits
+       clock: 1333MHz (0.8ns)
