@@ -1,7 +1,8 @@
-package com.mageddo.spring.reactive.controller;
+package com.mageddo.mvcundertow.controller;
 
-import com.mageddo.spring.reactive.dao.UserRepository;
-import com.mageddo.spring.reactive.entity.UserEntity;
+
+import com.mageddo.user.dao.UserRepository;
+import com.mageddo.user.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -9,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import reactor.core.publisher.Mono;
 
 @RestController
 public class UserController {
@@ -22,7 +22,7 @@ public class UserController {
 	}
 
 	@GetMapping(value = "/users/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public @ResponseBody ResponseEntity<Mono<UserEntity>> geatUser(@PathVariable("id") int userId){
+	public @ResponseBody ResponseEntity<UserEntity> geatUser(@PathVariable("id") int userId){
 		return ResponseEntity.ok(userRepository.getById(userId));
 	}
 }
