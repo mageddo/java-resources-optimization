@@ -9,13 +9,17 @@ Compile packages
 
 	./gradlew installDist
 
-Start benchmark environemnt
+Start benchmark environemnt, enter docker container and start the tests for netty for example
 
-	docker-compose up -d
+```
+docker-compose up -d &&\
+docker exec java-resources-optimization ./spring-mvc-undertow/build/install/spring-mvc-undertow/bin/spring-mvc-undertow
+```
 
-Enter docker container and start the tests
+Running the benchmark (outside docker)
 
-	$ docker exec -it bash java-resources-optimization
+	siege -v -c10 -t1m http://172.17.0.1:8081/users/1
+
 
 ## Specs
 The test were runned at docker controlled environment then you can see and test it just looking at `docker-compose.yml` anyway my specific computer specs are at `specs` file
@@ -37,36 +41,25 @@ JVM
 
 ## Benchmarks
 
-### Spring Web Flux - Netty
-Now Spring is reactive with spring webflux, it also uses netty, a lighweight servlet container
-
-	./spring-netty-webflux/build/install/spring-netty-webflux/bin/spring-netty-webflux
-
-
-#### Stress Test
-```
-$ siege -v -c5 -t2m http://...:8081/users/1
-Lifting the server siege...
-Transactions:		        2070 hits
-Availability:		      100.00 %
-Elapsed time:		      119.64 secs
-Data transferred:	        0.00 MB
-Response time:		        0.03 secs
-Transaction rate:	       17.30 trans/sec
-Throughput:		        0.00 MB/sec
-Concurrency:		        0.57
-Successful transactions:        2070
-Failed transactions:	           0
-Longest transaction:	        1.04
-Shortest transaction:	        0.00
-```
+| Tool                 | Startup (Sec) | Transactions | Availability | Time (Sec) | Response time (Sec) | Transaction rate (trans/sec) | Concurrency | Longest transaction | Shortest transaction | Data transferred (Mb) |
+|----------------------|---------------|--------------|--------------|------------|---------------------|------------------------------|-------------|---------------------|----------------------|-----------------------|
+| Spring WebFlux Netty | 110.059       | 2050         | 100%         | 59.72      | 0.04                | 34.33                        | 1.54        | 1.26                | 0.00                 | 0.06                  |
+| Spring MVC Tomcat    | 120.946       | 2191         | 100%         | 59.81      | 0.02                | 36.63                        | 0.87        | 0.72                | 0.0                  | 0.07                  |
+| Spring MVC Undertow  | 92.526        | 2299         | 100%         | 59.30      | 0.01                | 38.77                        | 0.56        | 0.93                | 0.00                 | 0.07                  |
 
 
-#### VisualVM Results
+#### Spring WebFlow - Netty
 
-* ![Spring Web Flux Java 8 Metaspace](https://i.imgur.com/rtPUjuf.png)
-* ![Spring Web Flux Java 8 Heap/CPU](https://i.imgur.com/ERuiEky.png)
+* ![](https://i.imgur.com/43SlqMy.png)
+* ![](https://i.imgur.com/ZFCiFuD.png)
 
 ### Spring MVC - Tomcat
+* ![](https://i.imgur.com/p7tfQis.png)
+* ![](https://i.imgur.com/jr7De6Z.png)
+
+
 
 ### Spring MVC - Undertow
+
+* ![](https://i.imgur.com/7jaWKGX.png)
+* ![](https://i.imgur.com/8ugIKnb.png)
