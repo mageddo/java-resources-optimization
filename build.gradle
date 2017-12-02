@@ -1,1 +1,10 @@
 apply plugin: 'java'
+
+allprojects {
+	repositories {
+		mavenCentral()
+		maven {
+			url 'http://repo.spring.io/milestone/'
+		}
+	}
+}
