@@ -1,6 +1,5 @@
 package com.mageddo.mvcundertow.controller;
 
-
 import com.mageddo.user.dao.UserRepository;
 import com.mageddo.user.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;

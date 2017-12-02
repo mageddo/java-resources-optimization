@@ -4,7 +4,7 @@ apply plugin: 'application'
 sourceCompatibility = '8'
 targetCompatibility = '8'
 
-mainClassName = 'com.mageddo.user.App'
+mainClassName = 'com.mageddo.webfluxnetty.App'
 
 dependencies {
 	
