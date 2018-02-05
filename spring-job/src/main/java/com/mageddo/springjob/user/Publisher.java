@@ -3,6 +3,7 @@ package com.mageddo.springjob.user;
 
 import com.mageddo.user.dao.UserRepository;
 import com.mageddo.user.entity.UserEntity;
+import org.apache.commons.lang3.time.StopWatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Binding;
@@ -16,6 +17,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.amqp.core.Queue;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+
+import java.util.concurrent.TimeUnit;
+
 
 @Component
 public class Publisher {
@@ -35,12 +39,14 @@ public class Publisher {
 	@Scheduled(fixedDelay = 60000)
 	public void notifyUser(){
 		logger.info("status=sending...");
-		for (int i = 0; i < 2500; i++) {
+		final StopWatch stopWatch = new StopWatch();
+		stopWatch.start();
+		for (int i = 0; i < 5000; i++) {
 			for (UserEntity userEntity : userRepository.findAll()) {
 				rabbitTemplate.convertAndSend(exchange, "", userEntity);
 			}
 		}
-		logger.info("status=all-sent!");
+		logger.info("status=all-sent!, time={}s", stopWatch.getTime(TimeUnit.SECONDS));
 	}
 	
 	@Bean
