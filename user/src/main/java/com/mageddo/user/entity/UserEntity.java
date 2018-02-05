@@ -14,7 +14,7 @@ public class UserEntity implements Serializable {
 	@Column(name = "ID")
 	private Integer id;
 
-	@Column(nullable = false, length = 2)
+	@Column(name = "AGE", nullable = false, length = 2)
 	private int age;
 
 	@Column(name = "NAME")
