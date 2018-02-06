@@ -14,3 +14,14 @@ services:
     env_file:
       - .env
     network_mode: bridge
+
+  tomcat:
+    container_name: tomcat-9
+    hostname: java-tomcat.dev
+#    cpus: 3
+    mem_limit: 1000m
+    memswap_limit: 0
+    build:
+      context: .
+      dockerfile: Dockerfile.tomcat
+    network_mode: bridge

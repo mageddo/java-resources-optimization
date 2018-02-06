@@ -1,22 +1,31 @@
 apply plugin: 'java'
-apply plugin: 'application'
+//apply plugin: 'application'
+apply plugin: 'war'
 
 sourceCompatibility = '8'
 targetCompatibility = '8'
 
-mainClassName = 'com.mageddo.mvcundertow.App'
+//mainClassName = 'com.mageddo.mvcundertow.App'
+//mainClass = 'com.mageddo.mvcundertow.App'
 
 dependencies {
 
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '1.5.9.RELEASE'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '1.5.9.RELEASE'
-	compile group: 'org.springframework.boot', name: 'spring-boot-starter-undertow', version: '1.5.9.RELEASE'
-	compile (group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.9.RELEASE'){
-		exclude  module: 'spring-boot-starter-tomcat'
-	}
+//	compile group: 'org.springframework.boot', name: 'spring-boot-starter-undertow', version: '1.5.9.RELEASE'
+	compile (group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.9.RELEASE')
+//	{
+//		exclude  module: 'spring-boot-starter-tomcat'
+//	}
+	providedRuntime(group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '1.5.9.RELEASE')
 
 
 	compile(project(':user'))
 
 	testCompile 'junit:junit:4.12'
+}
+
+war {
+	baseName = 'app-1'
+//	version =  '0.5.0'
 }
