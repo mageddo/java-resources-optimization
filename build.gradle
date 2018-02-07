@@ -17,3 +17,10 @@ dependencies {
 	compile project(':atm')
 	compile project(':user')
 }
+
+
+allprojects {
+	jar {
+		baseName = project.path.replaceAll(':', '-')
+	}
+}

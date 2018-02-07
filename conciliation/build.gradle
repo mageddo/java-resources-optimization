@@ -12,14 +12,11 @@ dependencies {
 
 project(':conciliation:core') {
 	dependencies {
-
-		compile(group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: springBootVersion)
-
-		compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0'
-		compile 'org.slf4j:slf4j-api:1.7.18'
-		compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.45'
-
+		compile project(':core')
 		testCompile 'junit:junit:4.12'
+	}
+	jar {
+		baseName = project.path.replaceAll(':', '-')
 	}
 }
 
