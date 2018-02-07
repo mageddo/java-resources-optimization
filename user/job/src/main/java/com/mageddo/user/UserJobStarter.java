@@ -1,6 +1,5 @@
-package com.mageddo.springjob;
+package com.mageddo.user;
 
-import com.mageddo.user.Config;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,11 +10,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 @EnableRabbit
 @Import(Config.class)
-public class Main {
-
-
+public class UserJobStarter {
 	public static void main(String[] args) {
-		SpringApplication.run(Main.class, args);
+		SpringApplication.run(UserJobStarter.class, args);
 	}
 
 }

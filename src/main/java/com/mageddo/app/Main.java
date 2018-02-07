@@ -1,13 +1,14 @@
 package com.mageddo.app;
 
 
-import com.mageddo.webfluxnetty.App;
+import com.mageddo.user.UserJobStarter;
+import com.mageddo.user.api.UserApiStarter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
-@Import({App.class, com.mageddo.springjob.Main.class})
+@Import({UserApiStarter.class, UserJobStarter.class})
 public class Main {
 
 	public static void main(String[] args) {

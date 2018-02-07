@@ -1,8 +1,18 @@
-subprojects {
+allprojects {
 	apply plugin: 'java'
 	sourceCompatibility = '8'
+
+	repositories {
+		mavenCentral()
+	}
+
 }
 
+
+dependencies {
+	compile project(':user:job')
+	compile project(':user:api')
+}
 
 project(':user:core'){
 
@@ -23,6 +33,7 @@ project(':user:job'){
 
 	dependencies {
 		compile group: 'org.springframework.boot', name: 'spring-boot-starter-amqp', version: '1.5.9.RELEASE'
+		compile project(':user:core')
 	}
 }
 
