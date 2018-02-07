@@ -1,4 +1,4 @@
-rootProject.name = 'java-resources-optimization'
+rootProject.name = 'mageddo'
 
 include ':atm'
 include ':atm:core'
