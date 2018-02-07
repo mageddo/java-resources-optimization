@@ -12,6 +12,7 @@ repositories {
 }
 
 dependencies {
+	compile project(':core')
 	compile project(':conciliation')
 	compile project(':atm')
 	compile project(':user')

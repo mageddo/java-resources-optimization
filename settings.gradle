@@ -11,3 +11,4 @@ include ':user:core'
 include ':user:api'
 include ':user:job'
 
+include ':core'
