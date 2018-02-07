@@ -8,7 +8,6 @@ allprojects {
 
 }
 
-
 dependencies {
 	compile project(':user:job')
 	compile project(':user:api')
@@ -17,9 +16,7 @@ dependencies {
 project(':user:core'){
 	dependencies {
 
-		compile(group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '1.5.9.RELEASE')
-
-		compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0'
+		compile(group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: springBootVersion)
 		compile 'org.slf4j:slf4j-api:1.7.18'
 		compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.45'
 
@@ -30,15 +27,15 @@ project(':user:core'){
 
 project(':user:job'){
 	dependencies {
-		compile group: 'org.springframework.boot', name: 'spring-boot-starter-amqp', version: '1.5.9.RELEASE'
+		compile group: 'org.springframework.boot', name: 'spring-boot-starter-amqp', version: springBootVersion
 		compile project(':user:core')
 	}
 }
 
 project(':user:api'){
 	dependencies {
-		compile (group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '1.5.9.RELEASE')
-		compile (group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.9.RELEASE')
+		compile (group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: springBootVersion)
+		compile (group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootVersion)
 		compile project(':user:core')
 	}
 }
