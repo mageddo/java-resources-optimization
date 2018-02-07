@@ -1,7 +1,13 @@
 rootProject.name = 'java-resources-optimization'
 
-include 'spring-netty-webflux'
-include 'spring-mvc-undertow'
-include 'spring-job'
-include 'grpc'
-include 'user'
+include ':atm'
+include ':atm:core'
+
+include ':conciliation'
+include ':conciliation:core'
+
+include ':user'
+include ':user:core'
+include ':user:api'
+include ':user:job'
+
