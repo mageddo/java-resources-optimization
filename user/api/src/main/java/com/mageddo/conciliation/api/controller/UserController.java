@@ -1,7 +1,7 @@
 package com.mageddo.webfluxnetty.controller;
 
-import com.mageddo.user.dao.UserRepository;
-import com.mageddo.user.entity.UserEntity;
+import com.mageddo.conciliation.dao.UserRepository;
+import com.mageddo.conciliation.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

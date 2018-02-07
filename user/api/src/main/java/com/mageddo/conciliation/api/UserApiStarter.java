@@ -1,4 +1,4 @@
-package com.mageddo.user.api;
+package com.mageddo.conciliation.api;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

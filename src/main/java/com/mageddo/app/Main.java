@@ -1,8 +1,8 @@
 package com.mageddo.app;
 
 
-import com.mageddo.user.UserJobStarter;
-import com.mageddo.user.api.UserApiStarter;
+import com.mageddo.conciliation.UserJobStarter;
+import com.mageddo.conciliation.api.UserApiStarter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;

@@ -1,4 +1,4 @@
-package com.mageddo.user.entity;
+package com.mageddo.conciliation.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

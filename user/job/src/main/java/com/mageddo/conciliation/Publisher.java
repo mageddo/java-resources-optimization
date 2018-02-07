@@ -1,8 +1,8 @@
 package com.mageddo.springjob.user;
 
 
-import com.mageddo.user.dao.UserRepository;
-import com.mageddo.user.entity.UserEntity;
+import com.mageddo.conciliation.dao.UserRepository;
+import com.mageddo.conciliation.entity.UserEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Binding;

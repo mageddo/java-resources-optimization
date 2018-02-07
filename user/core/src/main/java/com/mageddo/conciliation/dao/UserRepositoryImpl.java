@@ -1,6 +1,6 @@
-package com.mageddo.user.dao;
+package com.mageddo.conciliation.dao;
 
-import com.mageddo.user.entity.UserEntity;
+import com.mageddo.conciliation.entity.UserEntity;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

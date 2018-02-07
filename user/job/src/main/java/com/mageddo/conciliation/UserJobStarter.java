@@ -1,4 +1,4 @@
-package com.mageddo.user;
+package com.mageddo.conciliation;
 
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.boot.SpringApplication;
